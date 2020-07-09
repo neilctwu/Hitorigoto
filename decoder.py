@@ -1,6 +1,8 @@
 import torch
 from torch import nn
 from torch.nn import functional as F
+
+
 # Luong attention layer
 class Attn(nn.Module):
     def __init__(self, method, hidden_size):
@@ -83,3 +85,4 @@ class LuongAttnDecoderRNN(nn.Module):
         output = F.softmax(output, dim=1)
         # Return output and final hidden state
         return output, hidden
+

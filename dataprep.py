@@ -1,9 +1,7 @@
 import itertools
 import torch
 
-PAD_token = 0  # Used for padding short sentences
-SOS_token = 1  # Start-of-sentence token
-EOS_token = 2  # End-of-sentence token
+from params import *
 
 def indexesFromSentence(voc, sentence):
     return [voc.word2index[word] for word in sentence.split(' ')] + [EOS_token]
@@ -43,7 +41,6 @@ def outputVar(l, voc):
 
 # Returns all items for a given batch of pairs
 def batch2TrainData(voc, pair_batch):
-    import pdb; pdb.set_trace()
     pair_batch.sort(key=lambda x: len(x[0].split(" ")), reverse=True)
     input_batch, output_batch = [], []
     for pair in pair_batch:
