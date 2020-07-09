@@ -12,11 +12,8 @@ import csv
 import random
 import re
 import os
-import unicodedata
 import codecs
 from io import open
-import itertools
-import math
 
 from utils import *
 from dataprep import *
